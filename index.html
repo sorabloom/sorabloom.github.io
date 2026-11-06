@@ -4,47 +4,48 @@
 <!-- ===== CHANGE BRAND NAME HERE (also updates title/footer via JS) ===== -->
 <script>const BRAND="Sora Bloom";const EMAIL="hello@example.com";/* PLACEHOLDER email */</script>
 <style>
-:root{--pink:#f7d6dc;--pink2:#fbe9ec;--rose:#e79aa8;--sage:#b9cdb4;--sage2:#e6efe3;--ink:#4a4446;--cream:#fffaf7}
+:root{--pink:#ff4db8;--pink2:#ffe6f4;--rose:#ff2d95;--aqua:#00d4c8;--aqua2:#d9fffb;--ink:#2d2a2e;--cream:#fafffe}
 *{box-sizing:border-box;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
 section{padding:64px 22px;max-width:960px;margin:auto}
-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;position:sticky;top:0;background:#fffaf7e6;backdrop-filter:blur(8px);z-index:9}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;position:sticky;top:0;background:#fafffee6;backdrop-filter:blur(8px);z-index:9}
 .logo{font-family:Georgia,serif;font-size:1.3rem;color:var(--rose)}nav a.btn{padding:8px 16px;font-size:.85rem}
 .btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;border-radius:999px;padding:14px 26px;font-weight:600}
-.btn.alt{background:var(--sage);color:var(--ink)}
-.hero{text-align:center;background:radial-gradient(circle at 20% 20%,var(--pink),transparent 60%),radial-gradient(circle at 80% 70%,var(--sage2),transparent 60%);max-width:none;padding:70px 22px 80px}
-.hero h1{font-size:clamp(2.2rem,8vw,3.6rem);line-height:1.15;margin:14px 0}.tag{letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;color:#8a9e86}
-.hero p{max-width:480px;margin:0 auto 26px}.hero svg{width:min(320px,80%);margin:10px auto 20px;display:block}.hero-img{width:min(360px,90%);aspect-ratio:3/2;object-fit:cover;border-radius:28px;margin:10px auto 20px;display:block;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.btn.alt{background:var(--aqua);color:#fff}
+.hero{text-align:center;background:radial-gradient(circle at 18% 18%,#ff8ad4 0%,transparent 55%),radial-gradient(circle at 82% 72%,#7af0e8 0%,transparent 55%),linear-gradient(160deg,#ffe6f4,#d9fffb);max-width:none;padding:70px 22px 80px}
+.hero h1{font-size:clamp(2.2rem,8vw,3.6rem);line-height:1.15;margin:14px 0}.tag{letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;color:#008f88}
+.hero p{max-width:480px;margin:0 auto 26px}.hero svg{width:min(320px,80%);margin:10px auto 20px;display:block}.hero-img{width:min(360px,90%);aspect-ratio:3/2;object-fit:cover;border-radius:28px;margin:10px auto 20px;display:block;box-shadow:0 10px 30px rgba(255,45,149,.15)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px}
-.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 6px 24px #e79aa81f;text-align:center}
-.card svg{width:110px;height:110px}.card img{width:100%;max-width:160px;height:160px;object-fit:cover;border-radius:20px;margin:0 auto 12px;display:block}.price{color:var(--rose);font-weight:600}.hero-badge{background:var(--sage2);border-radius:999px;font-size:.7rem;padding:3px 10px;display:inline-block}
-small,.note{font-size:.75rem;color:#8a8285}
-.story{background:var(--sage2);border-radius:32px}
+.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 6px 24px rgba(255,45,149,.12);text-align:center}
+.card svg{width:110px;height:110px}.card img{width:100%;max-width:160px;height:160px;object-fit:cover;border-radius:20px;margin:0 auto 12px;display:block}.price{color:var(--rose);font-weight:600}.hero-badge{background:var(--aqua2);color:#008f88;border-radius:999px;font-size:.7rem;padding:3px 10px;display:inline-block}
+small,.note{font-size:.75rem;color:#6e676a}
+.story{background:var(--aqua2);border-radius:32px}
 .wait{text-align:center;background:var(--pink2);border-radius:32px;margin:40px auto}
 .social a{margin:0 8px;color:var(--ink)}
-footer{text-align:center;padding:40px 22px;font-size:.8rem;color:#8a8285}
+footer{text-align:center;padding:40px 22px;font-size:.8rem;color:#6e676a}
+em{color:var(--aqua);font-style:italic}
 </style></head><body>
 <nav><span class="logo brand">Sora Bloom</span><a class="btn" href="#waitlist">Join waitlist</a></nav>
 <header class="hero">
 <div class="tag">Korean-inspired · Organic · Gold Coast</div>
-<h1>Soft skin,<br>simply <em>bloomed</em>.</h1>
-<img class="hero-img" src="images/hero.jpg" alt="Woman preparing natural skincare at a bright table - Sora Bloom">
-<p>Gentle K-beauty science meets organic, plant-powered ingredients — at prices that feel kind too.</p>
+<h1>Clear skin,<br>simply <em>bloomed</em>.</h1>
+<img class="hero-img" src="hero.jpg" alt="Clear glowing skin close-up - Sora Bloom">
+<p>Bright K-beauty glow meets organic, plant-powered care — for skin that looks fresh, even and camera-ready.</p>
 <a class="btn" href="#waitlist">Be first to know ✿</a>
 </header>
 <section id="products"><div class="tag">Coming soon</div><h2>The first collection</h2>
 <div class="grid">
-<div class="card"><img src="images/toner-pads.jpg" alt="Sora Bloom Glow Toner Pads" width="160" height="160" loading="lazy"><span class="hero-badge">Hero</span><h3>Glow Toner Pads</h3><p>Soft, soaked pads that refresh, hydrate and leave skin looking smooth and dewy in one swipe.</p><p class="price">from $XX*</p></div>
-<div class="card"><img src="images/cica-cream.jpg" alt="Sora Bloom Cica Barrier Cream jar" width="160" height="160" loading="lazy"><h3>Cica Barrier Cream</h3><p>Centella &amp; ceramides to comfort, moisturise and support a soft, healthy-looking skin barrier.</p><p class="price">from $XX*</p></div>
-<div class="card"><img src="images/bakuchiol-serum.jpg" alt="Sora Bloom Bakuchiol Serum dropper bottle" width="160" height="160" loading="lazy"><h3>Bakuchiol Serum</h3><p>A plant-based serum for skin that looks smoother, brighter and more even.</p><p class="price">from $XX*</p></div>
-<div class="card"><img src="images/honey-balm.jpg" alt="Sora Bloom Honey Balm tin" width="160" height="160" loading="lazy"><h3>Honey Balm</h3><p>Nourishing natural oils &amp; beeswax melt in to soften dry spots, lips and cuticles.</p><p class="price">from $XX*</p></div>
+<div class="card"><img src="concealer.jpg" alt="Sora Bloom Brightening Concealer" width="160" height="160" loading="lazy"><span class="hero-badge">Hero</span><h3>Brightening Concealer</h3><p>Lightweight K-beauty organic concealer that softens shadows and leaves a fresh, clear-skin finish.</p><p class="price">from $XX*</p></div>
+<div class="card"><img src="toner-pads.jpg" alt="Sora Bloom Glow Toner Pads" width="160" height="160" loading="lazy"><h3>Glow Toner Pads</h3><p>Soft, soaked pads that refresh, hydrate and leave skin looking smooth and dewy in one swipe.</p><p class="price">from $XX*</p></div>
+<div class="card"><img src="cica-cream.jpg" alt="Sora Bloom Cica Barrier Cream jar" width="160" height="160" loading="lazy"><h3>Cica Barrier Cream</h3><p>Centella &amp; ceramides to comfort, moisturise and support a soft, healthy-looking skin barrier.</p><p class="price">from $XX*</p></div>
+<div class="card"><img src="bakuchiol-serum.jpg" alt="Sora Bloom Bakuchiol Serum dropper bottle" width="160" height="160" loading="lazy"><h3>Bakuchiol Serum</h3><p>A plant-based serum for skin that looks smoother, brighter and more even.</p><p class="price">from $XX*</p></div>
 </div><p class="note">*Placeholder prices for illustration only. Final pricing TBC at launch.</p></section>
 <section class="story"><div class="tag">Our story</div><h2>Made with care, from the Gold Coast</h2>
-<p>Hi, I'm Gabby! I fell in love with Korean skincare — clever textures, gentle routines, real glow — and with simple natural formulas like oil-and-beeswax balms. So I'm creating a range that brings both together: crafted with experienced Korean labs, made with organic and naturally derived ingredients wherever possible, and priced for real life. Designed on the Gold Coast, for sunny, happy skin.</p></section>
+<p>Hi, I'm Gabby! I fell in love with Korean skincare — clever textures, gentle routines, real clear-skin glow — and with simple natural formulas. So I'm creating a range that brings both together: crafted with experienced Korean labs, made with organic and naturally derived ingredients wherever possible, and priced for real life. Designed on the Gold Coast, for bright, happy skin that feels as fresh as it looks.</p></section>
 <section class="wait" id="waitlist"><h2>Join the waitlist</h2><p>Get launch news, early-bird offers and a little thank-you gift.</p><br>
 <a class="btn" id="mail" href="#">Email me to join ✉</a><p class="note" style="margin-top:12px">Opens your email app. (Placeholder address — to be updated before launch.)</p></section>
 <section style="text-align:center" class="social"><h3>Follow along</h3><p><a href="https://instagram.com/" id="ig">Instagram @placeholder</a> · <a href="https://tiktok.com/" id="tt">TikTok @placeholder</a></p></section>
-<footer>© 2026 <span class="brand">Sora Bloom</span> · Gold Coast, QLD, Australia<br>Cosmetic products. For external use only.<br><span class="note">Toner pad photo: <a href="https://commons.wikimedia.org/wiki/File:Cotton_pads.jpg" style="color:inherit">Evi Michailidou</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" style="color:inherit">CC BY-SA</a></span></footer>
+<footer>© 2026 <span class="brand">Sora Bloom</span> · Gold Coast, QLD, Australia<br>Cosmetic products. For external use only.<br><span class="note">Hero photo: <a href="https://unsplash.com/photos/w4Dj3MshHQ0" style="color:inherit">Fleur Kaan</a> / <a href="https://unsplash.com/license" style="color:inherit">Unsplash</a> · Concealer photo: <a href="https://www.pexels.com/photo/a-woman-in-white-tank-top-applying-a-concealer-on-her-face-7290182/" style="color:inherit">MART PRODUCTION</a> / <a href="https://www.pexels.com/license/" style="color:inherit">Pexels</a> · Toner pads: <a href="https://commons.wikimedia.org/wiki/File:Cotton_pads.jpg" style="color:inherit">Evi Michailidou</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" style="color:inherit">CC BY-SA</a></span></footer>
 <script>document.querySelectorAll('.brand').forEach(e=>e.textContent=BRAND);document.title=BRAND+" — Korean-inspired organic skincare";
 document.getElementById('mail').href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Join the "+BRAND+" waitlist")+"&body="+encodeURIComponent("Hi! Please add me to the waitlist.\nName:\nInstagram (optional):");</script>
 </body></html>
