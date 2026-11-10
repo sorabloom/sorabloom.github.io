@@ -14,8 +14,8 @@
 <style>
 :root{
   --pink:#ff4db8;--pink2:#ffe6f4;--rose:#ff2d95;--hot:#ff3da8;
-  --green:#2ec56a;--green-deep:#1ea355;--leaf:#3dcc6e;
-  --mint:#b8f5d0;--mint2:#e8fff2;--tag-green:#1f9a50;
+  --green:#6fd8a8;--green-deep:#3fae80;--leaf:#8ee6bf;
+  --mint:#b8f5d0;--mint2:#e8fff2;--tag-green:#2f7a57;
   --ink:#2d2a2e;--cream:#fff7fb;--card:#fff;--muted:#7a7276;--nav-h:68px;
 }
 *{box-sizing:border-box;margin:0}
@@ -39,7 +39,7 @@ section{padding:56px 20px;max-width:960px;margin:auto;position:relative;z-index:
   text-shadow:0 0 8px rgba(255,255,255,.8);
   font-size:var(--s,14px);user-select:none;
 }
-.sparkles span.mint{color:#3dcc6e}
+.sparkles span.mint{color:#8ee6bf}
 .sparkles span.gold{color:#ffd36e}
 .sparkles span.heart{color:#ff5eb8;opacity:.7}
 @keyframes twinkle{
@@ -71,7 +71,7 @@ nav a.btn{padding:8px 16px;font-size:.85rem;white-space:nowrap}
   background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));
   border-radius:999px;pointer-events:none;
 }
-.btn.alt{background:linear-gradient(180deg,#7eefb0 0%,#2ec56a 100%);box-shadow:0 8px 18px rgba(46,197,106,.25)}
+.btn.alt{background:linear-gradient(180deg,#c4f5dd 0%,#6fd8a8 100%);color:#2f7a57;box-shadow:0 8px 18px rgba(111,216,168,.3)}
 
 .hero{
   text-align:center;
@@ -99,9 +99,9 @@ nav a.btn{padding:8px 16px;font-size:.85rem;white-space:nowrap}
 }
 .line-green-wrap{display:inline-block;position:relative;padding-right:.65em}
 .line-green{
-  background:linear-gradient(180deg,#e8ffd8 0%,#7eef9a 22%,#2ec56a 55%,#1ea355 92%);
+  background:linear-gradient(180deg,#f0fff7 0%,#b6f0d4 22%,#7fdcb0 55%,#4fbf8f 92%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 1px 0 rgba(255,255,255,.85)) drop-shadow(0 2px 0 #168a42) drop-shadow(0 6px 10px rgba(30,163,85,.22));
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.85)) drop-shadow(0 2px 0 #3a9a73) drop-shadow(0 6px 10px rgba(63,174,128,.22));
 }
 .heart-flourish{
   position:absolute;right:-.05em;bottom:.18em;width:.46em;height:.46em;
@@ -155,7 +155,7 @@ nav a.btn{padding:8px 16px;font-size:.85rem;white-space:nowrap}
 .badge{
   width:102px;height:102px;border-radius:50%;
   background:linear-gradient(180deg,#fff7fb 0%,#ffe0f2 100%);
-  border:2.5px solid #7eefb0;
+  border:2.5px solid #b6f0d4;
   box-shadow:0 6px 16px rgba(255,45,149,.12),inset 0 1px 0 #fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:3px;padding:8px 8px 6px;
@@ -382,7 +382,7 @@ footer a{color:inherit}
     <div class="badge">
       <span class="icon" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="28" height="28">
-          <path fill="#3dcc6e" d="M8.5 31.5c.8-12.5 12.2-23 27.8-25.2 1.2 15.2-7.6 26.2-22.8 29.4-2.3.5-5.2-1.2-5-4.2z"/>
+          <path fill="#8ee6bf" d="M8.5 31.5c.8-12.5 12.2-23 27.8-25.2 1.2 15.2-7.6 26.2-22.8 29.4-2.3.5-5.2-1.2-5-4.2z"/>
           <path d="M11.5 30.5c7.2-5.2 16-14.8 23.8-23" stroke="#f3fff7" stroke-width="2" fill="none" stroke-linecap="round"/>
           <path d="M20 24c-3.2 2.2-6 5-8 8M26 16.5c-3.4 2.4-6 5.2-8.2 8.2" stroke="#e8fff2" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         </svg>
