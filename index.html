@@ -8,13 +8,15 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffe6f4'/%3E%3Cellipse cx='10.5' cy='15' rx='6.5' ry='5.5' fill='%23ff2d95'/%3E%3Cellipse cx='21.5' cy='15' rx='6.5' ry='5.5' fill='%23ff2d95'/%3E%3Cellipse cx='10.5' cy='15' rx='3.2' ry='2.6' fill='%23ff9ad9'/%3E%3Cellipse cx='21.5' cy='15' rx='3.2' ry='2.6' fill='%23ff9ad9'/%3E%3Ccircle cx='16' cy='16' r='3.1' fill='%23ff4db8'/%3E%3Cpath d='M14.2 18.2 L10 26.5 L15.4 20z' fill='%23ff2d95'/%3E%3Cpath d='M17.8 18.2 L22 26.5 L16.6 20z' fill='%23ff2d95'/%3E%3Cpath fill='%23ffd36e' d='M25.5 6.2l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nunito:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 <!-- ===== CHANGE BRAND NAME HERE (also updates title/footer via JS) ===== -->
 <script>const BRAND="My Wishlist";const EMAIL="hello@example.com";/* PLACEHOLDER email */</script>
 <style>
 :root{
-  --pink:#ff4db8;--pink2:#ffe6f4;--rose:#ff2d95;--aqua:#00d4c8;--aqua2:#d9fffb;
-  --ink:#2d2a2e;--cream:#fff7fb;--card:#fff;--muted:#7a7276;
+  --pink:#ff4db8;--pink2:#ffe6f4;--rose:#ff2d95;--hot:#ff3da8;
+  --green:#2ec56a;--green-deep:#1ea355;--leaf:#3dcc6e;
+  --mint:#b8f5d0;--mint2:#e8fff2;--tag-green:#1f9a50;
+  --ink:#2d2a2e;--cream:#fff7fb;--card:#fff;--muted:#7a7276;--nav-h:68px;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -23,7 +25,7 @@ body{
   color:var(--ink);background:var(--cream);line-height:1.65;
   overflow-x:hidden;
 }
-h1,h2,h3,.logo,.hangul{
+h2,h3,.logo,.hangul{
   font-family:"Jua","Gowun Dodum",Georgia,sans-serif;
   font-weight:400;letter-spacing:.01em;
 }
@@ -37,8 +39,9 @@ section{padding:56px 20px;max-width:960px;margin:auto;position:relative;z-index:
   text-shadow:0 0 8px rgba(255,255,255,.8);
   font-size:var(--s,14px);user-select:none;
 }
-.sparkles span.aqua{color:#2ee0d6}
+.sparkles span.mint{color:#3dcc6e}
 .sparkles span.gold{color:#ffd36e}
+.sparkles span.heart{color:#ff5eb8;opacity:.7}
 @keyframes twinkle{
   0%,100%{opacity:.15;transform:scale(.7) rotate(0deg)}
   40%{opacity:.95;transform:scale(1.15) rotate(18deg)}
@@ -47,46 +50,126 @@ section{padding:56px 20px;max-width:960px;margin:auto;position:relative;z-index:
 
 nav{
   display:flex;justify-content:space-between;align-items:center;gap:12px;
-  padding:12px 18px;position:sticky;top:0;z-index:9;
-  background:#fff7fbe8;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid #ffd6ee;
+  padding:14px 18px 10px;position:sticky;top:0;z-index:9;
+  background:linear-gradient(180deg,rgba(255,224,242,.55),rgba(255,240,248,.28));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
 .brand-lockup{display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;min-width:0}
 .logo{font-size:1.45rem;color:var(--rose);line-height:1.1}
-.hangul{display:block;font-size:.72rem;color:var(--aqua);letter-spacing:.12em;margin-top:2px}
-.shell{width:32px;height:32px;flex:0 0 32px}
+.hangul{display:block;font-size:.72rem;color:var(--tag-green);letter-spacing:.12em;margin-top:2px}
+.shell{width:34px;height:34px;flex:0 0 34px;display:block}
 nav a.btn{padding:8px 16px;font-size:.85rem;white-space:nowrap}
 
 .btn{
-  display:inline-block;background:var(--rose);color:#fff;text-decoration:none;
-  border-radius:999px;padding:14px 26px;font-weight:700;
-  box-shadow:0 8px 18px rgba(255,45,149,.25);
+  display:inline-block;background:linear-gradient(180deg,#ff7ac4 0%,#ff3da8 48%,#ff2d95 100%);
+  color:#fff;text-decoration:none;border-radius:999px;padding:14px 26px;font-weight:700;
+  box-shadow:0 8px 18px rgba(255,45,149,.28),inset 0 1px 0 rgba(255,255,255,.45);
+  position:relative;overflow:hidden;border:0;
 }
-.btn.alt{background:var(--aqua);box-shadow:0 8px 18px rgba(0,212,200,.25)}
+.btn::after{
+  content:"";position:absolute;left:12%;right:12%;top:0;height:48%;
+  background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));
+  border-radius:999px;pointer-events:none;
+}
+.btn.alt{background:linear-gradient(180deg,#7eefb0 0%,#2ec56a 100%);box-shadow:0 8px 18px rgba(46,197,106,.25)}
 
 .hero{
   text-align:center;
   background:
-    radial-gradient(circle at 14% 12%,#ff9ad9 0%,transparent 48%),
-    radial-gradient(circle at 88% 78%,#7af0e8 0%,transparent 52%),
-    linear-gradient(165deg,#ffe6f4 0%,#fff 45%,#d9fffb 100%);
-  max-width:none;padding:56px 18px 72px;position:relative;z-index:1;
+    radial-gradient(circle at 12% 6%,#ffc1e8 0%,transparent 42%),
+    radial-gradient(circle at 90% 10%,#ffd6f0 0%,transparent 38%),
+    radial-gradient(circle at 8% 62%,#c8f8d8 0%,transparent 46%),
+    radial-gradient(circle at 94% 78%,#b8f5d0 0%,transparent 50%),
+    linear-gradient(180deg,#ffd6ee 0%,#ffe8f4 26%,#fff5fa 48%,#eaffe8 74%,#c8f8dc 100%);
+  max-width:none;padding:8px 18px 64px;position:relative;z-index:1;margin-top:calc(-1 * var(--nav-h, 64px));padding-top:var(--nav-h, 64px);
 }
-.hero h1{font-size:clamp(2.15rem,8.4vw,3.7rem);line-height:1.2;margin:12px 0 8px}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.hero-bg svg{width:100%;height:100%;display:block}
+.hero > *:not(.hero-bg){position:relative;z-index:1}
+
+.hero h1{
+  font-family:"Pacifico",cursive;font-weight:400;font-size:clamp(2.35rem,10.4vw,4.1rem);
+  line-height:1.12;margin:6px 0 14px;letter-spacing:.01em;
+}
+.line-pink{
+  display:block;
+  background:linear-gradient(180deg,#ffffff 0%,#ffd4ec 10%,#ff7ac4 32%,#ff3da8 58%,#ff2d95 82%,#ff6eb8 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 3px 0 #e01780) drop-shadow(0 8px 14px rgba(255,45,149,.28));
+}
+.line-green-wrap{display:inline-block;position:relative;padding-right:.65em}
+.line-green{
+  background:linear-gradient(180deg,#e8ffd8 0%,#7eef9a 22%,#2ec56a 55%,#1ea355 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.85)) drop-shadow(0 2px 0 #168a42) drop-shadow(0 6px 10px rgba(30,163,85,.22));
+}
+.heart-flourish{
+  position:absolute;right:-.05em;bottom:.18em;width:.46em;height:.46em;
+  transform:rotate(16deg);overflow:visible;pointer-events:none;
+}
 .tag{
-  letter-spacing:.18em;text-transform:uppercase;font-size:.7rem;color:#008f88;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;font-size:.7rem;color:var(--tag-green);font-weight:700;
+  margin-top:8px;
 }
-.hero p{max-width:480px;margin:0 auto 24px;font-size:1.05rem}
+.tag .sep{color:#ff7ac4;letter-spacing:0;margin:0 .4em;font-size:.85em}
+
+.hero p{max-width:480px;margin:0 auto 8px;font-size:1.05rem;color:#3a3a3a}
+.hero-media-wrap{
+  width:min(560px,94%);margin:8px auto 20px;position:relative;z-index:1;
+}
 .hero-media{
-  width:min(560px,94%);margin:16px auto 22px;aspect-ratio:500/280;
-  border-radius:28px;overflow:hidden;position:relative;
-  box-shadow:0 12px 36px rgba(255,45,149,.22),0 0 0 4px #fff,0 0 0 7px #ffb3e0;
-  background:#ffeef8;
+  width:100%;aspect-ratio:500/280;border-radius:32px;overflow:hidden;position:relative;
+  border:8px solid transparent;
+  background:
+    linear-gradient(#fff0f7,#fff0f7) padding-box,
+    linear-gradient(155deg,#ffffff 0%,#ffd0ea 16%,#ff7ac4 42%,#ff3da8 68%,#ff2d95 88%,#ffb3de 100%) border-box;
+  box-shadow:
+    0 16px 40px rgba(255,45,149,.28),
+    0 0 0 1px rgba(255,182,220,.55),
+    inset 0 1px 0 rgba(255,255,255,.5);
+}
+.hero-media-wrap::before{
+  content:"";position:absolute;top:4px;left:16%;right:16%;height:11px;z-index:3;
+  background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,0));
+  border-radius:20px;pointer-events:none;
 }
 .hero-media video,.hero-media img{
-  width:100%;height:100%;object-fit:cover;display:block;border:0;
+  width:100%;height:100%;object-fit:cover;display:block;border:0;border-radius:24px;background:#ffeef8;
 }
-.hero em{color:var(--aqua);font-style:normal}
+
+.hero h1{position:relative}
+.sparkle-local{
+  position:absolute;line-height:1;pointer-events:none;user-select:none;
+  text-shadow:0 0 8px rgba(255,255,255,.95),0 0 12px rgba(255,138,205,.7);
+  color:#fff;font-size:.42em;z-index:2;
+}
+.sparkle-local.a{left:-.15em;top:.08em;color:#fff;font-size:.38em}
+.sparkle-local.b{right:8%;top:-.02em;color:#ffd0ea;font-size:.3em}
+.sparkle-local.c{left:8%;top:1.05em;color:#fff;font-size:.28em}
+.sparkle-local.d{right:-.05em;top:.55em;color:#ff7ac8;font-size:.36em}
+
+.badges{
+  display:flex;justify-content:center;align-items:stretch;gap:14px;
+  margin:18px auto 26px;flex-wrap:wrap;max-width:400px;
+}
+.badge{
+  width:102px;height:102px;border-radius:50%;
+  background:linear-gradient(180deg,#fff7fb 0%,#ffe0f2 100%);
+  border:2.5px solid #7eefb0;
+  box-shadow:0 6px 16px rgba(255,45,149,.12),inset 0 1px 0 #fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:8px 8px 6px;
+}
+.badge .icon{font-size:1.45rem;line-height:1;display:block}
+.badge .icon svg{display:block}
+.badge .label{
+  font-size:.58rem;font-weight:700;color:var(--tag-green);line-height:1.2;text-align:center;
+}
+.flag-wrap{position:relative;display:inline-block;line-height:1}
+.flag-wrap .tiny-heart{
+  position:absolute;top:-.55em;left:50%;transform:translateX(-50%);
+  font-size:.55rem;color:#ff5eb8;line-height:1;
+}
 
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));margin-top:26px}
 .card{
@@ -103,21 +186,24 @@ nav a.btn{padding:8px 16px;font-size:.85rem;white-space:nowrap}
 }
 .price{color:var(--rose);font-weight:700;margin-top:auto;padding-top:8px}
 .hero-badge{
-  background:linear-gradient(90deg,#d9fffb,#ffe6f4);color:#008f88;
+  background:linear-gradient(90deg,#e8fff2,#ffe6f4);color:var(--tag-green);
   border-radius:999px;font-size:.68rem;padding:3px 10px;display:inline-block;
   font-weight:700;letter-spacing:.04em;margin-bottom:4px;
 }
 small,.note{font-size:.75rem;color:var(--muted)}
 #products h2,.story h2,.wait h2{font-size:clamp(1.6rem,5vw,2.2rem);margin-top:4px}
 
-.story{background:var(--aqua2);border-radius:32px}
-.wait{text-align:center;background:var(--pink2);border-radius:32px;margin:40px auto}
+.story{
+  background:linear-gradient(165deg,#e8fff2 0%,#fff5fa 100%);
+  border-radius:32px;border:2px solid #c8f8dc;
+}
+.wait{text-align:center;background:linear-gradient(180deg,#ffe6f4 0%,#fff0f8 60%,#e8fff2 100%);border-radius:32px;margin:40px auto;border:2px solid #ffd6ee}
 .social{text-align:center}
 .social a{margin:0 8px;color:var(--ink)}
 footer{text-align:center;padding:40px 20px 48px;font-size:.78rem;color:var(--muted);position:relative;z-index:1}
 footer a{color:inherit}
-.k-accent{font-family:"Gowun Dodum","Jua",sans-serif;color:var(--rose)}
-.deco{display:block;text-align:center;margin:8px 0 0;font-size:1.05rem;letter-spacing:.35em}
+.k-accent{font-family:"Gowun Dodum","Jua",sans-serif;color:var(--tag-green)}
+.deco{display:block;text-align:center;margin:8px 0 0;font-size:1.05rem;letter-spacing:.35em;color:#ff7ac8}
 
 @media (max-width:700px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -125,8 +211,13 @@ footer a{color:inherit}
 }
 @media (max-width:420px){
   .card img{max-width:100%;height:170px}
-  nav{padding:10px 12px}
+  nav{padding:10px 12px 8px}:root{--nav-h:60px}
   .logo{font-size:1.28rem}
+  .badge{width:96px;height:96px}
+  .hero{padding:var(--nav-h,60px) 16px 56px 16px}
+}
+@media (min-width:800px){
+  .hero{padding:var(--nav-h,68px) 32px 80px 32px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -137,53 +228,183 @@ footer a{color:inherit}
 <body>
 <div class="sparkles" aria-hidden="true">
   <span style="left:6%;top:8%;--s:18px;--t:3.8s;--d:.2s">✦</span>
-  <span class="aqua" style="left:18%;top:22%;--s:12px;--t:4.6s;--d:1s">✧</span>
+  <span class="mint" style="left:18%;top:22%;--s:12px;--t:4.6s;--d:1s">✧</span>
   <span class="gold" style="left:28%;top:6%;--s:16px;--t:3.2s;--d:.6s">★</span>
   <span style="left:42%;top:14%;--s:14px;--t:5s;--d:1.4s">✨</span>
-  <span class="aqua" style="left:58%;top:5%;--s:13px;--t:4.1s;--d:.3s">✦</span>
+  <span class="mint" style="left:58%;top:5%;--s:13px;--t:4.1s;--d:.3s">✦</span>
   <span style="left:72%;top:16%;--s:20px;--t:3.5s;--d:.9s">★</span>
   <span class="gold" style="left:88%;top:9%;--s:15px;--t:4.8s;--d:1.8s">✧</span>
-  <span style="left:8%;top:48%;--s:13px;--t:5.2s;--d:.4s">✨</span>
-  <span class="aqua" style="left:93%;top:36%;--s:17px;--t:3.7s;--d:1.1s">✦</span>
+  <span class="heart" style="left:8%;top:48%;--s:13px;--t:5.2s;--d:.4s">♡</span>
+  <span class="mint" style="left:93%;top:36%;--s:17px;--t:3.7s;--d:1.1s">✦</span>
   <span style="left:4%;top:72%;--s:15px;--t:4.4s;--d:.7s">★</span>
   <span class="gold" style="left:22%;top:86%;--s:12px;--t:3.9s;--d:1.6s">✧</span>
-  <span class="aqua" style="left:49%;top:92%;--s:18px;--t:4.7s;--d:.2s">✦</span>
+  <span class="mint" style="left:49%;top:92%;--s:18px;--t:4.7s;--d:.2s">✦</span>
   <span style="left:67%;top:78%;--s:14px;--t:3.4s;--d:1.3s">✨</span>
   <span class="gold" style="left:84%;top:88%;--s:16px;--t:5.1s;--d:.5s">★</span>
-  <span class="aqua" style="left:91%;top:62%;--s:12px;--t:4s;--d:1.7s">✧</span>
-  <span style="left:36%;top:60%;--s:11px;--t:4.9s;--d:.8s">✦</span>
+  <span class="mint" style="left:91%;top:62%;--s:12px;--t:4s;--d:1.7s">✧</span>
+  <span class="heart" style="left:36%;top:60%;--s:13px;--t:4.9s;--d:.8s">♡</span>
   <span class="gold" style="left:12%;top:34%;--s:10px;--t:3.6s;--d:2s">★</span>
   <span style="left:78%;top:44%;--s:13px;--t:5.4s;--d:.1s">✨</span>
+  <span class="heart" style="left:82%;top:28%;--s:14px;--t:4.2s;--d:1.2s">♡</span>
 </div>
 
-<nav>
-  <div class="brand-lockup">
-    <svg class="shell" viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="16" cy="16" r="15.5" fill="#ffe6f4"/>
-      <circle cx="16" cy="8.2" r="5.1" fill="#ff6ec4"/>
-      <circle cx="23.4" cy="12.4" r="5.1" fill="#ff7ad0"/>
-      <circle cx="21.6" cy="21.2" r="5.1" fill="#ff62c0"/>
-      <circle cx="10.4" cy="21.2" r="5.1" fill="#ff7ad0"/>
-      <circle cx="8.6" cy="12.4" r="5.1" fill="#ff6ec4"/>
-      <circle cx="16" cy="16" r="4.5" fill="#7af0e8"/>
-      <circle cx="16" cy="16" r="2.1" fill="#fff4a3"/>
-    </svg>
-    <span><span class="logo brand">My Wishlist</span><span class="hangul">마이 위시리스트</span></span>
-  </div>
-  <a class="btn" href="#waitlist">Join waitlist</a>
-</nav>
+  <nav>
+    <div class="brand-lockup">
+      <svg class="shell" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="8.1" r="5.15" fill="#ff6ec4"/>
+        <circle cx="23.55" cy="12.55" r="5.15" fill="#ff7ad0"/>
+        <circle cx="21.55" cy="21.35" r="5.15" fill="#ff5eb8"/>
+        <circle cx="10.45" cy="21.35" r="5.15" fill="#ff7ad0"/>
+        <circle cx="8.45" cy="12.55" r="5.15" fill="#ff6ec4"/>
+        <circle cx="16" cy="16" r="5" fill="#ffe27a"/>
+        <circle cx="16" cy="16" r="2.35" fill="#fff6c8"/>
+      </svg>
+      <span><span class="logo brand">My Wishlist</span><span class="hangul">마이 위시리스트</span></span>
+    </div>
+    <a class="btn" href="#waitlist">Join waitlist ✨</a>
+  </nav>
 
 <header class="hero">
-  <div class="tag">Korean-inspired · Organic · Gold Coast</div>
-  <h1>Clear skin,<br>simply <em>bloomed</em>.</h1>
-  <div class="hero-media">
-    <video autoplay muted loop playsinline poster="/anime-eyes-poster.jpg" width="500" height="280" aria-label="Sparkly blinking anime eyes">
-      <source src="/anime-eyes.webm" type="video/webm">
-      <source src="/anime-eyes.mp4" type="video/mp4">
-    </video>
+  <div class="hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pinkRib" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ffe0f2"/>
+          <stop offset="30%" stop-color="#ff9ad4"/>
+          <stop offset="65%" stop-color="#ff6eb8"/>
+          <stop offset="100%" stop-color="#ffc4e8"/>
+        </linearGradient>
+        <linearGradient id="pinkRib2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffd0ea"/>
+          <stop offset="45%" stop-color="#ff86c8"/>
+          <stop offset="100%" stop-color="#ffb3de"/>
+        </linearGradient>
+        <linearGradient id="mintRib" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0fff6"/>
+          <stop offset="28%" stop-color="#8ef0b6"/>
+          <stop offset="68%" stop-color="#4edc82"/>
+          <stop offset="100%" stop-color="#c8f8dc"/>
+        </linearGradient>
+        <linearGradient id="mintRib2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d8ffe4"/>
+          <stop offset="50%" stop-color="#6eeaa4"/>
+          <stop offset="100%" stop-color="#e8fff2"/>
+        </linearGradient>
+        <filter id="soft" x="-15%" y="-15%" width="130%" height="130%">
+          <feGaussianBlur stdDeviation="1.4"/>
+        </filter>
+        <filter id="softer" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="14"/>
+        </filter>
+      </defs>
+
+      <!-- soft colour washes: pink top, mint lower -->
+      <ellipse cx="600" cy="40" rx="420" ry="180" fill="#ffcce8" opacity=".55" filter="url(#softer)"/>
+      <ellipse cx="430" cy="120" rx="230" ry="140" fill="#ffb3de" opacity=".35" filter="url(#softer)"/>
+      <ellipse cx="420" cy="720" rx="280" ry="220" fill="#9af0c0" opacity=".42" filter="url(#softer)"/>
+      <ellipse cx="820" cy="760" rx="300" ry="240" fill="#6eeaa4" opacity=".4" filter="url(#softer)"/>
+      <ellipse cx="200" cy="500" rx="260" ry="260" fill="#ffc1e3" opacity=".28" filter="url(#softer)"/>
+      <ellipse cx="1040" cy="420" rx="250" ry="260" fill="#b8f5d0" opacity=".32" filter="url(#softer)"/>
+
+      <!-- ===== desktop-side ribbons (far left / far right) ===== -->
+      <path d="M -40 80 C 120 40, 80 200, 200 260 C 320 320, 80 400, 180 520 C 280 640, 40 720, 160 840"
+        fill="none" stroke="url(#pinkRib)" stroke-width="46" stroke-linecap="round" opacity=".78" filter="url(#soft)"/>
+      <path d="M 1240 60 C 1080 120, 1180 220, 1000 300 C 840 380, 1160 460, 1020 580 C 900 700, 1180 780, 1060 900"
+        fill="none" stroke="url(#mintRib)" stroke-width="50" stroke-linecap="round" opacity=".78" filter="url(#soft)"/>
+      <path d="M 80 700 C 200 640, 120 800, 280 860" fill="none" stroke="url(#mintRib2)" stroke-width="36" stroke-linecap="round" opacity=".7"/>
+      <path d="M 1120 200 C 980 260, 1100 340, 960 400" fill="none" stroke="url(#pinkRib2)" stroke-width="32" stroke-linecap="round" opacity=".65"/>
+
+      <!-- ===== mobile-visible ribbons in the centre column (~x 375–825) ===== -->
+      <!-- pink, left of centre -->
+      <path d="M 350 -30 C 470 60, 330 140, 430 210 C 530 280, 340 350, 410 430 C 490 520, 330 600, 400 690 C 470 780, 340 850, 390 940"
+        fill="none" stroke="url(#pinkRib)" stroke-width="38" stroke-linecap="round" opacity=".92" filter="url(#soft)"/>
+      <path d="M 390 20 C 490 90, 360 170, 460 250 C 540 320, 380 390, 450 480"
+        fill="none" stroke="url(#pinkRib2)" stroke-width="22" stroke-linecap="round" opacity=".75"/>
+      <!-- mint, right of centre -->
+      <path d="M 860 -20 C 740 70, 900 150, 780 230 C 660 310, 880 390, 800 480 C 720 570, 900 650, 790 750 C 680 850, 880 910, 820 1000"
+        fill="none" stroke="url(#mintRib)" stroke-width="40" stroke-linecap="round" opacity=".9" filter="url(#soft)"/>
+      <path d="M 820 80 C 730 150, 860 210, 760 290 C 670 360, 840 420, 770 520"
+        fill="none" stroke="url(#mintRib2)" stroke-width="20" stroke-linecap="round" opacity=".75"/>
+      <!-- lower pink curl under badges, left -->
+      <path d="M 340 640 C 450 600, 400 700, 510 740 C 620 780, 430 830, 500 900"
+        fill="none" stroke="url(#pinkRib2)" stroke-width="34" stroke-linecap="round" opacity=".88" filter="url(#soft)"/>
+      <!-- lower mint curls under / beside CTA -->
+      <path d="M 860 620 C 740 670, 840 740, 700 790 C 580 840, 800 880, 740 960"
+        fill="none" stroke="url(#mintRib2)" stroke-width="36" stroke-linecap="round" opacity=".9" filter="url(#soft)"/>
+      <path d="M 380 760 C 500 730, 440 820, 580 850 C 700 878, 560 930, 640 980"
+        fill="none" stroke="url(#mintRib)" stroke-width="28" stroke-linecap="round" opacity=".8"/>
+      <!-- a mint ribbon peeking at the top right of the title -->
+      <path d="M 820 10 C 740 70, 830 120, 750 170"
+        fill="none" stroke="url(#mintRib)" stroke-width="24" stroke-linecap="round" opacity=".7"/>
+      <!-- a pink wisp near the top left of the title -->
+      <path d="M 400 40 C 480 20, 500 90, 430 120"
+        fill="none" stroke="url(#pinkRib)" stroke-width="18" stroke-linecap="round" opacity=".7"/>
+
+      <!-- satin highlights -->
+      <path d="M 365 0 C 470 70, 345 145, 425 215 C 515 280, 355 345, 405 420"
+        fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".35"/>
+      <path d="M 845 10 C 745 80, 885 155, 785 230 C 690 300, 860 375, 805 465"
+        fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".32"/>
+      <path d="M 845 635 C 750 675, 830 745, 715 792"
+        fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" opacity=".3"/>
+      <path d="M 355 655 C 450 620, 415 705, 505 742"
+        fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".28"/>
+    </svg>
   </div>
+
+
+
+  <div class="tag">Korean-inspired <span class="sep">✧</span> Organic <span class="sep">✧</span> Gold Coast</div>
+  <h1>
+    <span class="sparkle-local a" aria-hidden="true">✦</span>
+    <span class="sparkle-local b" aria-hidden="true">✦</span>
+    <span class="sparkle-local c" aria-hidden="true">✧</span>
+    <span class="sparkle-local d" aria-hidden="true">♡</span>
+    <span class="line-pink">Clear skin,</span>
+    <span class="line-green-wrap">
+      <span class="line-green">simply bloomed.</span>
+      <svg class="heart-flourish" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4s-6.4-4.2-9.15-8.05C.7 9.7 1.2 6.15 4.35 4.7 6.5 3.7 8.85 4.35 12 7.6c3.15-3.25 5.5-3.9 7.65-2.9 3.15 1.45 3.65 5 1.5 7.65C18.4 16.2 12 20.4 12 20.4z" fill="none" stroke="#ff4db8" stroke-width="1.9" stroke-linejoin="round"/></svg>
+    </span>
+  </h1>
+
+  <div class="hero-media-wrap">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="/anime-eyes-poster.jpg" width="500" height="280" aria-label="Sparkly blinking anime eyes">
+        <source src="/anime-eyes.webm" type="video/webm">
+        <source src="/anime-eyes.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
   <p>Bright K-beauty glow meets organic, plant-powered care — for skin that looks fresh, even and camera-ready.</p>
-  <a class="btn" href="#waitlist">Be first to know ✿</a>
+
+  <div class="badges">
+    <div class="badge">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="28" height="28">
+          <path fill="#3dcc6e" d="M8.5 31.5c.8-12.5 12.2-23 27.8-25.2 1.2 15.2-7.6 26.2-22.8 29.4-2.3.5-5.2-1.2-5-4.2z"/>
+          <path d="M11.5 30.5c7.2-5.2 16-14.8 23.8-23" stroke="#f3fff7" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M20 24c-3.2 2.2-6 5-8 8M26 16.5c-3.4 2.4-6 5.2-8.2 8.2" stroke="#e8fff2" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="label">Organic<br>Ingredients</span>
+    </div>
+    <div class="badge">
+      <span class="icon flag-wrap" aria-hidden="true"><span class="tiny-heart">♡</span>🇰🇷</span>
+      <span class="label">Korean-<br>Inspired</span>
+    </div>
+    <div class="badge">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26">
+          <path fill="#ff6ec4" d="M16 2.2l3.05 9.55L29 16l-9.95 4.25L16 29.8l-3.05-9.55L3 16l9.95-4.25z"/>
+          <path fill="#fff" opacity=".75" d="M16 8.2l1.15 4.55L22 14.5l-4.85 1.2L16 20.4l-1.15-4.7L10 14.5l4.85-1.75z"/>
+        </svg>
+      </span>
+      <span class="label">Radiant<br>Glow</span>
+    </div>
+  </div>
+
+  <a class="btn" href="#waitlist">Be first to know ✨</a>
 </header>
 
 <section id="products">
