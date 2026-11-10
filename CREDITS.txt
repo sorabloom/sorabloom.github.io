@@ -1,0 +1,31 @@
+concealer-skin.jpg
+  "Crop black woman applying concealer on face" by George Milton
+  Source: https://www.pexels.com/photo/crop-black-woman-applying-concealer-on-face-6954211/
+  License: Pexels License (free for commercial use, including websites; attribution not required but appreciated)
+  License text: https://www.pexels.com/license/
+  Notes: cropped to a close-up of concealer applied / swatched on skin. No visible brand or logo on inspection.
+  Replaces previous concealer.jpg (which showed a dropper, not concealer on skin).
+
+glow-oil.jpg
+  "A Glass Bottle with Dropper on White Surface" by Andrzej Gdula, Pexels License
+  https://www.pexels.com/photo/a-glass-bottle-with-dropper-on-white-surface-11137702/
+  https://www.pexels.com/license/
+
+toner-pads.jpg
+  "Cotton pads" by Evi Michailidou, Wikimedia Commons, CC BY-SA 3.0/4.0
+  https://commons.wikimedia.org/w/index.php?curid=19125509 (cropped/resized)
+
+cica-cream.jpg
+  "Free pink homemade lip balm" rawpixel, CC0
+  https://www.rawpixel.com/image/5919201
+
+bakuchiol-serum.jpg
+  "Dropper bottle, blank retro label" rawpixel, CC0
+  https://www.rawpixel.com/image/11515770
+
+anime-eyes.mp4 / anime-eyes.webm / anime-eyes-poster.jpg
+  Hero loop provided by Gabby (WhatsApp animation; converted with ffmpeg to a short muted web loop + poster still).
+  Not a third-party stock asset.
+
+Old root files no longer referenced by index.html (do not need to upload / can be removed from the live repo root):
+  hero.jpg, concealer.jpg, honey-balm.jpg
